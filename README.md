@@ -13,7 +13,7 @@ The data we feed the model includes draft position, college conference, college 
 
 We gather the data for players drafted between 2004 and 2016 and validate it with a 5-fold cross-validation. This mean that we separate 20% of the data and train on the remaining 80%, then we do it 4 more times changing which part of the data is the 20% each time, at the end, we have an average performance for the model. At the same time, we iteratively try to optimize the model's parameters, this means we redo the 5-fold cross-validation 100 times and get the best average performance (if you've been keeping up, it means we trained a total of 500 models for each position).
 
-##But how do we gauge model performance?
+## But how do we gauge model performance?
 
 First we need to understand what false positives and false negatives are.
 
@@ -23,7 +23,7 @@ False Negative - A sample classified as negative, but it's actually a positive. 
 
 In our model, when we talk about performance, we're talking about the false positive rate, which means we're trying to minimize the amount of false positives. So the model is learning to avoid busts at all costs, even if it may miss on home-runs.
 
-##So, how good is the performance?
+## So, how good is the performance?
 
 Our model achieved a precision of 0.77 for WRs, and 0.72 for RBs. That means that, on average, 75% of the players the model said would "hit" (get a top 24 season) did in fact hit.
 
@@ -31,7 +31,8 @@ Note, however, that this is the average cross-validation performance, so the ris
 
 **Ideally we would measure the false positive rate these predictions as the true measure of performance of this model, but I couldn't be bothered to do it, some younger player might still put good numbers in the future and I didn't want to deal with that.**
 
-Rookie Predictions
+## Rookie Predictions
+
 So, without further ado, here are the predictions made by the model for the 2022 rookie class:
 
 WRs - https://pastebin.com/W9iGtHbq
