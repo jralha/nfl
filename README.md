@@ -2,14 +2,14 @@
 
 Simple XGBoost classifiers aiming to classify NFL Draft prospects as hits or misses in terms of fantasy football production.
 
-##How it Works
+## How it Works
 This is a binary classifier, that means it classifies samples as either 0 or 1, in reality, it outputs the probability of a sample being classified as 1, which is what we want (It consider a 1 everything that has a probability of over 50%).
 
 In our case, the positive outcome (the 1) is whether a player finished among the top 24 in terms of PPR scoring for his position at any given point in his career.
 
 The data we feed the model includes draft position, college conference, college production stats (raw stats, team relative stats, dominator scores, etc) and physical profile (Combine/Pro Day measurements and RAS/Freak score among others). In total, our model looks at more than 200 variables to output our probability.
 
-##So, how do we train this model?
+## So, how do we train this model?
 
 We gather the data for players drafted between 2004 and 2016 and validate it with a 5-fold cross-validation. This mean that we separate 20% of the data and train on the remaining 80%, then we do it 4 more times changing which part of the data is the 20% each time, at the end, we have an average performance for the model. At the same time, we iteratively try to optimize the model's parameters, this means we redo the 5-fold cross-validation 100 times and get the best average performance (if you've been keeping up, it means we trained a total of 500 models for each position).
 
